@@ -69,8 +69,8 @@ script:
     - make pep8
     - make lint
     # Run the test suite
+    # Make pytest report any captured output on stdout or stderr
     - if [ "$COVERAGE" == "true" ]; then
-        # Make pytest report any captured output on stdout or stderr
         make coverage PYTEST_EXTRA="-r P";
       else
         make test PYTEST_EXTRA="-r P";
